@@ -1,0 +1,155 @@
+/*============================================
+　トップページ用スタイルシート
+　　author: Nasumiso
+============================================*/
+
+@charset "utf-8";
+
+/*============================================
+　全般的なスタイル
+============================================*/
+* {
+	margin:0; padding:0;
+	color:#fff;	/* 文字色：白 */
+	font-family:"メイリオ",sans-serif;	/* フォントはメイリオ */
+}
+
+html{height: 100%;}		/* 一画面表示するための高さ設定 */
+
+body{
+	height: 100%;
+	background-image: url(back.jpg);	/* 背景色(hoverしたときの色) */
+	background-size: cover;
+	background-position: center center;
+	animation-name: imgchange;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes imgchange {
+	0%	{background-image: url(back.jpg);}
+	100%{background-image: url(back2.jpg);}
+}
+
+/*============================================
+　ヘッダー
+============================================*/
+header{
+	font-size: 10vh;
+	font-weight: bold;
+	position: absolute;
+	top: 2vh;
+	left: 2vw;
+	text-shadow: 0 0 2vh #000;
+}
+
+/*============================================
+　ナビゲーション
+============================================*/
+nav{
+	position: absolute;
+	bottom: 97.5px/*calc(14.142vh - 2.5vw)*/;	/*ナビゲーション垂直方向位置*/
+}
+
+nav ul{list-style-type: none;}
+
+nav ul li{
+	float: left;
+	width:117.837px/*8.071vw*/;	/*ナビゲーション水平方向間隔*/
+}
+
+nav ul li a{
+	display: block;
+	width: 379px/*40vh*/;
+	height: 73px/*5vw*/;
+	border: solid 2px #fff;
+	transform: rotate(-45deg) skewX(45deg);	/*ナビゲーション回転角・傾斜角*/
+
+	transition-property: margin-left,margin-top;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+nav ul li a:hover{
+	margin-left: 45px/*5vh*/;
+	margin-top: -45px/*-5vh*/;
+}
+
+/*ナビゲーション色*/
+nav ul li:nth-child(4n+1) a{background-color: rgba(255,  0,  0,0.75);}
+nav ul li:nth-child(4n+2) a{background-color: rgba(255,116,  0,0.75);}
+nav ul li:nth-child(4n+3) a{background-color: rgba(  0,153,153,0.75);}
+nav ul li:nth-child(4n+0) a{background-color: rgba(  0,204,  0,0.75);}
+
+nav ul li a div{
+	font-size: 29px/*2vw*/;
+	font-weight: bold;
+	position: absolute;
+	top: 22px/*1.25vw*/;
+	right: 45px/*5vh*/;
+	transform: skewX(-45deg);
+}
+
+/*============================================
+　セクション
+============================================*/
+section{
+	position: absolute;
+	right:100px;
+	bottom: 100px;
+}
+
+section iframe{border: solid 1.5px #000;}
+
+/*============================================
+　フッター
+============================================*/
+footer{
+	width: 100vw;
+	height: 47.35px/*5vh*/;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	background-color: #222;
+}
+
+footer small{
+	font-size: 14.205px/*1.5vh*/;
+	position: absolute;
+	bottom: 11.8px/*1.25vh*/;
+	right: 29.1px/*2vw*/;
+}
+
+/*============================================
+　スマホ対応
+============================================*/
+@media screen and (max-width: 734px) {
+	header{
+		font-size: auto;
+		width: 96vw;
+	}
+
+	nav{
+		left: -60px;
+		bottom: 50px;
+	}
+	nav ul li{clear: left;}
+
+	nav ul li a{
+		width: 379px/*40vh*/;
+		height: 73px/*5vw*/;
+		transform: skewX(45deg);	/*ナビゲーション回転角・傾斜角*/
+		transition-property: none;
+	}
+
+	nav ul li a:hover{
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+
+}
