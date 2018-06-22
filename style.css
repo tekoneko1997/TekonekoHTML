@@ -18,7 +18,7 @@ html{height: 100%;}		/* 一画面表示するための高さ設定 */
 
 body{
 	height: 100%;
-	background-image: url(back.jpg);	/* 背景色(hoverしたときの色) */
+	background-image: url(assets/back.jpg);	/* 背景色(hoverしたときの色) */
 	background-size: cover;
 	background-position: center center;
 	animation-name: imgchange;
@@ -29,8 +29,8 @@ body{
 }
 
 @keyframes imgchange {
-	0%	{background-image: url(back.jpg);}
-	100%{background-image: url(back2.jpg);}
+	0%	{background-image: url(assets/back.jpg);}
+	100%{background-image: urlassets/(back2.jpg);}
 }
 
 /*============================================
